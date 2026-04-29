@@ -60,14 +60,16 @@ void MainWindow::get_data()
 
 void MainWindow::print()
 {
-        ui->tableWidget->setRowCount(0);
-        ui->tableWidget->setColumnCount(3);
-        ui->tableWidget->setHorizontalHeaderLabels({"Nom", "Prénom", "Âge"});
-
+    
         QFile file(filename);
         QString line;
         QString colonne;
         int row;
+    
+        ui->tableWidget->setRowCount(0);
+        ui->tableWidget->setColumnCount(3);
+        ui->tableWidget->setHorizontalHeaderLabels({"Nom", "Prénom", "Âge"});
+
 
         if(file.open(QIODevice::ReadOnly|QIODevice::Text))
         {
