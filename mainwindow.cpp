@@ -64,6 +64,7 @@ void MainWindow::print()
         QFile file(filename);
         QString line;
         QString colonne;
+        QStringList colonnes
         int row;
     
         ui->tableWidget->setRowCount(0);
@@ -78,7 +79,7 @@ void MainWindow::print()
             while(!in.atEnd())
             {
                 line = in.readLine();
-                QStringList colonnes = line.split(";");
+               colonnes = line.split(";");
 
                 if (colonnes.size() >= 3)
                 {
